@@ -13,7 +13,6 @@
 //
 // You should have received a copy of the GNU Lesser General Public License
 // along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
- 
 
 package vm
 
@@ -22,13 +21,22 @@ import (
 )
 
 // Gas costs
+// const (
+// 	GasQuickStep   uint64 = 2
+// 	GasFastestStep uint64 = 3
+// 	GasFastStep    uint64 = 5
+// 	GasMidStep     uint64 = 8
+// 	GasSlowStep    uint64 = 10
+// 	GasExtStep     uint64 = 20
+// )
+
 const (
 	GasQuickStep   uint64 = 2
-	GasFastestStep uint64 = 3
-	GasFastStep    uint64 = 5
-	GasMidStep     uint64 = 8
-	GasSlowStep    uint64 = 10
-	GasExtStep     uint64 = 20
+	GasFastestStep uint64 = GasQuickStep
+	GasFastStep    uint64 = GasQuickStep
+	GasMidStep     uint64 = GasQuickStep
+	GasSlowStep    uint64 = GasQuickStep
+	GasExtStep     uint64 = GasQuickStep
 )
 
 // callGas returns the actual gas cost of the call.
